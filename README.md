@@ -1,2 +1,2 @@
-# box-clip
-Resize, Clip and Center
+# BOX CLIP
+The implementation leverages an optimized image processing pipeline that executes a three-stage transformation matrix. The initial phase employs bilinear interpolation to perform dimensionality reduction while maintaining aspect ratio constraints through a calculated scaling coefficient (max(target_width/source_width, target_height/source_height)). Subsequently, the algorithm applies a rectangular binary mask to clip the transformed buffer to precise target dimensions using edge-detection boundaries. The final transformation calculates the centroid offset vectors (Δx, Δy) by evaluating the dimensional delta between source and target matrices, then translates the clipped buffer to achieve spatial centralization. This ensures pixel-perfect dimensional compliance while preserving maximum image fidelity within the specified constraints.
